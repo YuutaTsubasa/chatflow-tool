@@ -42,6 +42,11 @@ chatflow-tool-message-tool-darwin-x64-{version}.zip | macOS (64-bit)
 最長流速時間 | 彈幕最慢會流動多久才結束
 最左端距離 | 彈幕到最左邊多少的時候會結束
 
+## 版本修正紀錄
+### v1.0.1
+- 修正預設背景顏色為綠色時，會導致會員名稱被吃掉（改成洋紅色）。
+- 增加字體大小、顏色以及是否顯示已存在留言的設定。
+
 ## 使用技術
 - [npm](https://www.electronjs.org/)
 - [Electron](https://www.electronjs.org/)
