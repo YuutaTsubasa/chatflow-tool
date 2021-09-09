@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>悠太個人工作室：彈幕聊天室實況工具－設定頁面</title>
+    <link rel="stylesheet" href="setting.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-group">
+        <h1>視窗設定</h1>
+        <div class="input-group">
+          <label>聊天室網址</label>
+          <input type="text" id="url" />
+        </div>
+        <div class="input-group">
+          <label>視窗寬度</label>
+          <input type="text" id="width" />
+        </div>
+        <div class="input-group">
+          <label>視窗高度</label>
+          <input type="text" id="height" />
+        </div>
+        <div class="input-group">
+          <label>視窗背景</label>
+          <input type="text" id="background" />
+        </div>
+        <div class="input-group">
+          <label>字體</label>
+          <input type="text" id="font" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <h1>彈幕調整</h1>
+        <div class="input-group">
+          <label>最短流速時間</label>
+          <input type="text" id="minsecond" />
+        </div>
+        <div class="input-group">
+          <label>最長流速時間</label>
+          <input type="text" id="maxsecond" />
+        </div>
+        <div class="input-group">
+          <label>最左端距離</label>
+          <input type="text" id="leftmost" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <h1>自定義 CSS</h1>
+          <textarea id="inject-css"></textarea>
+      </div>
+
+      <button id="open_chatflow_button">
+        <span>打開彈幕聊天室視窗</span>
+      </button>
+    </div>    
+  </body>
+</html>
