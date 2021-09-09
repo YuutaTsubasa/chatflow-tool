@@ -2,7 +2,14 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const { main } = require('./appHelper');
 const settings = yaml.load(fs.readFileSync("setting.yaml", 'utf-8'));
-const settingFields = ["background", "font", "leftmost"];
+const settingFields = [
+    "background", "font", 
+    "font-size", "font-color", 
+    "normal-author-font-color",  
+    "manager-author-font-color",
+    "member-author-font-color",
+    "creator-author-font-color",
+    "leftmost"];
 const animatedTag = "animated";
 
 main(() => {
@@ -14,15 +21,24 @@ const init = () => {
     for(let settingField of settingFields) {
         document.querySelector(":root").style.setProperty(`--${settingField}`, settings[settingField]);
     }
+
+    if (settings["show-existed-message"] === 'false') addTagToExistedMessages();
 }
 
-const addAnimationToMessages = () => {
-    document.querySelectorAll(
+const getAllMessageNodes = () => document.querySelectorAll(
         "yt-live-chat-text-message-renderer, " +
         "yt-live-chat-legacy-paid-message-renderer, " +
         "yt-live-chat-paid-message-renderer, " +
-        "yt-live-chat-membership-item-renderer")
-        .forEach(node => {
+        "yt-live-chat-membership-item-renderer");
+
+const addTagToExistedMessages = () => {
+    getAllMessageNodes().forEach(node => {
+        node.className += ` ${animatedTag}`;
+    })
+}
+
+const addAnimationToMessages = () => {
+    getAllMessageNodes().forEach(node => {
             if (node.className.includes(animatedTag))
                 return;
             

@@ -4,11 +4,18 @@
   --background: rgb(0, 255, 0);
   --font: "思源宋體 Heavy";
   --leftmost: -150%;
+  --font-color: white;
+  --font-size: var(--font-size);
+  --normal-author-font-color: white;
+  --manager-author-font-color: #5e84f1ff;
+  --member-author-font-color: #107516ff;
+  --creator-author-font-color: #ffd600ff;
 }
 
 body {
   background: var(--background);
   font-family: var(--font);
+  color: var(--font-color);
   overflow-y: hidden !important;
 }
 
@@ -21,19 +28,23 @@ yt-live-chat-ticker-renderer {
 }
 
 yt-live-chat-item-list-renderer {
-  --yt-live-chat-author-chip-owner-text-color: #ffd600ff;
+  --yt-live-chat-author-chip-owner-text-color: var(--creator-author-font-color);
   --yt-live-chat-deleted-message-color: rgba(153, 153, 153, 0.5);
   --yt-live-chat-item-timestamp-display: none;
   --yt-live-chat-item-timestamp-margin: 0 5px 0 0;
   --yt-live-chat-message-highlight-background-color: transparent;
-  --yt-live-chat-message-highlight-text-color: #ffd600ff;
-  --yt-live-chat-moderator-color: #5e84f1ff;
-  --yt-live-chat-owner-color: #ffd600ff;
+  --yt-live-chat-message-highlight-text-color: var(--creator-author-font-color);
+  --yt-live-chat-moderator-color: var(--manager-author-font-color);
+  --yt-live-chat-owner-color: var(--creator-author-font-color);
   --yt-live-chat-paid-message-author-name-color: #ffffffff;
-  --yt-live-chat-primary-text-color: #ffffffff;
-  --yt-live-chat-secondary-text-color: #ffffffff;
-  --yt-live-chat-sponsor-color: #107516ff;
+  --yt-live-chat-primary-text-color: var(--font-color);
+  --yt-live-chat-secondary-text-color: var(--normal-author-font-color);
+  --yt-live-chat-sponsor-color: var(--member-author-font-color);
   --yt-live-chat-tertiary-text-color: #999999ff;
+}
+
+#action-panel, yt-live-chat-banner-manager {
+  display: none !important;
 }
 
 #item-scroller {
@@ -61,7 +72,7 @@ yt-live-chat-text-message-renderer #author-photo img {
 }
 
 yt-live-chat-text-message-renderer yt-live-chat-author-chip {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0.15em;
   line-height: 1.4 !important;
   margin: 0 !important;
@@ -94,7 +105,7 @@ yt-live-chat-text-message-renderer yt-live-chat-author-chip {
 }
 
 yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   text-shadow: 
     -2px -2px 0 #000000ff,
     -2px -1px 0 #000000ff,
@@ -124,7 +135,7 @@ yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip
 }
 
 yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-chip {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   text-shadow: 
     -2px -2px 0 #000000ff,
     -2px -1px 0 #000000ff,
@@ -154,7 +165,7 @@ yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-
 }
 
 yt-live-chat-text-message-renderer[author-type="member"] yt-live-chat-author-chip {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   text-shadow: 
     -2px -2px 0 #000000ff,
     -2px -1px 0 #000000ff,
@@ -269,7 +280,7 @@ yt-live-chat-text-message-renderer[author-type="moderator"] yt-live-chat-author-
 
 yt-live-chat-text-message-renderer #message,
 yt-live-chat-text-message-renderer yt-formatted-string {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0.15em;
   line-height: 1.4 !important;
   text-shadow: 
@@ -301,7 +312,7 @@ yt-live-chat-text-message-renderer yt-formatted-string {
 }
 
 yt-live-chat-text-message-renderer #timestamp {
-  font-size: 16px !important;
+  font-size: calc(var(--font-size) - 2) !important;
   line-height: 1.4 !important;
 }
 
@@ -347,7 +358,7 @@ yt-live-chat-legacy-paid-message-renderer #card {
 
 yt-live-chat-legacy-paid-message-renderer #event-text,
 yt-live-chat-legacy-paid-message-renderer #detail-text {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0.15em;
   line-height: 1.4 !important;
   text-shadow: 
@@ -409,7 +420,7 @@ yt-live-chat-paid-message-renderer #content {
 }
 
 yt-live-chat-paid-message-renderer #author-name {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0.15em;
   line-height: 1.4 !important;
   text-shadow: 
@@ -449,7 +460,7 @@ yt-live-chat-paid-message-renderer #author-name::after {
 
 yt-live-chat-paid-message-renderer #purchase-amount,
 yt-live-chat-paid-message-renderer #message {
-  font-size: 18px !important;
+  font-size: var(--font-size) !important;
   letter-spacing: 0.15em;
   line-height: 1.4 !important;
   text-shadow: 
