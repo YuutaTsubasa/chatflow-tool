@@ -2,7 +2,7 @@
   "name": "chatflow",
   "productName": "chatflow",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A tool can convert the Youtube chat to be displayed like the Niconico barrage.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,22 +12,19 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "YuutaTsubasa",
+  "author": {
+    "name": "Yuuta Tsubasa",
+    "email": "yuuta.tsubasa.knight@gmail.com"
+  },
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "chatflow"
-          }
-        },
-        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
+            "darwin", "win32"
           ]
         },
         {
@@ -38,8 +35,22 @@
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "YuutaTsubasa",
+              "name": "clocktool"
+            }
+          }
+        }
       ]
     }
+  },
+  "build": {
+    "asar": true
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
@@ -52,6 +63,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.59",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
     "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "@electron-forge/publisher-github": "^6.0.0-beta.60",
     "electron": "13.2.1"
   }
 }
