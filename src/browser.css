@@ -523,7 +523,8 @@ yt-live-chat-viewer-engagement-message-renderer #action-button {
 yt-live-chat-header-renderer,
 yt-live-chat-message-input-renderer,
 yt-live-chat-mode-change-message-renderer,
-yt-live-chat-restricted-participation-renderer {
+yt-live-chat-restricted-participation-renderer,
+yt-live-chat-paid-sticker-renderer {
   display: none !important;
 }
 
@@ -535,7 +536,8 @@ yt-live-chat-restricted-participation-renderer {
 yt-live-chat-text-message-renderer, 
 yt-live-chat-legacy-paid-message-renderer,
 yt-live-chat-paid-message-renderer,
-yt-live-chat-membership-item-renderer{
+yt-live-chat-membership-item-renderer,
+yt-live-chat-paid-sticker-renderer{
     display: block !important;
     position: fixed !important;
     left: 100%;
