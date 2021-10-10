@@ -29,7 +29,8 @@ const getAllMessageNodes = () => document.querySelectorAll(
         "yt-live-chat-text-message-renderer, " +
         "yt-live-chat-legacy-paid-message-renderer, " +
         "yt-live-chat-paid-message-renderer, " +
-        "yt-live-chat-membership-item-renderer");
+        "yt-live-chat-membership-item-renderer" +
+        "yt-live-chat-paid-sticker-renderer");
 
 const addTagToExistedMessages = () => {
     getAllMessageNodes().forEach(node => {

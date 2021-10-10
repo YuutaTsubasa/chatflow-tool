@@ -1,0 +1,16 @@
+url: https://www.youtube.com/live_chat?is_popout=1&v=yZrYOMKZgXY
+width: '960'
+height: '540'
+background: rgb(255, 0, 255)
+font: '''思源宋體 Heavy'', ''微軟正黑體'''
+font-color: '#ffffff'
+normal-author-font-color: '#ffffff'
+member-author-font-color: '#107516'
+manager-author-font-color: '#5e84f1'
+creator-author-font-color: '#ffd600'
+font-size: 18px
+show-existed-message: 'true'
+minsecond: '8'
+maxsecond: '12'
+leftmost: '-150%'
+inject-css: ''
